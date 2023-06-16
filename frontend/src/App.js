@@ -5,6 +5,7 @@ import NotePage from './pages/NotePage'
 
 import {
   BrowserRouter as Router,
+  Routes,
   Route
 } from 'react-router-dom'
 
@@ -12,13 +13,19 @@ function App() {
   return (
 
     <Router>
-      
-    <div className="App">
-        <Header />
-        <Route path='/' exact component={NotesListPage}/>
-        <Route path='/note/:id' exact component={NotePage}/>
-    </div>
+      <div className="container dark">
+      <div className='app'>
 
+      <Header />
+      {/* <NotesListPage /> */}
+
+      <Routes>
+        <Route path='/' element={<NotesListPage/>}/>
+        <Route path='/note/:id' element={<NotePage/>}/>
+      </Routes>
+
+      </div>
+      </div>
     </Router>
   );
 }

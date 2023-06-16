@@ -1,6 +1,9 @@
+
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework.views import APIView
+
 from .models import Note
 from .serializers import NoteSerializer
 
@@ -58,3 +61,21 @@ def getNote(request, pk):
 
     return Response(serializer.data)
 
+@api_view(['PUT']) # not PATCH
+def updateNote(request, pk):
+    data = request.data
+
+    note = Note.objects.get(id=pk)
+    print(note)
+    print(note)
+    print(note)
+    print(note)
+    print(note)
+    print(note)
+    print(note)
+    serializer = NoteSerializer(instance=note, data=data)
+
+    if serializer.is_valid():
+        serializer.save() 
+
+    return Response(serializer.data)
