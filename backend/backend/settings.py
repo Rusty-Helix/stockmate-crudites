@@ -32,6 +32,8 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:9000',
     'http://127.0.0.1:3000',
     'http://localhost:3000',
+    # 'http://localhost:9000/admin/api/note/add/'
+    # 'http://127.0.0.1:9000/admin/api/note/add/'
     ]
 
 # CORS_ALLOW_ALL_ORIGINS = True

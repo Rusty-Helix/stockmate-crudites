@@ -7,6 +7,7 @@ import
 from 'react'
 import ListItem from '../components/ListItem'
 import {Link} from 'react-router-dom'
+import AddButton from '../components/AddButton'
 
 const NotesListPage = () => {
 
@@ -39,6 +40,7 @@ const NotesListPage = () => {
                             )
                         })}
                 </div>
+                <AddButton />
             </div>
         )
 }
